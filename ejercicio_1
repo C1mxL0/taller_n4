@@ -1,0 +1,46 @@
+public class Habitacion {
+
+    private int longitud;
+    private int anchura;
+
+    public Habitacion(int longitud, int anchura) {
+        this.longitud = longitud;
+        this.anchura = anchura;
+    }
+
+    public int getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(int longitud) {
+        this.longitud = longitud;
+    }
+
+    public int getAnchura() {
+        return anchura;
+    }
+
+    public void setAnchura(int anchura) {
+        this.anchura = anchura;
+    }
+
+    public double getSuperficie() {
+        return longitud * anchura;
+    }
+}
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+        // Crear objetos de tipo Habitacion
+        Habitacion habitacion1 = new Habitacion(10, 5);
+        Habitacion habitacion2 = new Habitacion(20, 10);
+        Habitacion habitacion3 = new Habitacion(30, 15);
+
+        // Calcular la superficie de cada habitación
+        System.out.println("La superficie de la habitación 1 es: " + habitacion1.getSuperficie());
+        System.out.println("La superficie de la habitación 2 es: " + habitacion2.getSuperficie());
+        System.out.println("La superficie de la habitación 3 es: " + habitacion3.getSuperficie());
+    }
+}
