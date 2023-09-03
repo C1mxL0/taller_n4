@@ -1,1 +1,72 @@
+public class Habitacion {
+
+    private double largo;
+    private double ancho;
+    private double altura;
+
+    public Habitacion() {
+    }
+
+    public Habitacion(double largo, double ancho, double altura) {
+        this.largo = largo;
+        this.ancho = ancho;
+        this.altura = altura;
+    }
+
+    public double getLargo() {
+        return largo;
+    }
+
+    public void setLargo(double largo) {
+        this.largo = largo;
+    }
+
+    public double getAncho() {
+        return ancho;
+    }
+
+    public void setAncho(double ancho) {
+        this.ancho = ancho;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double calcularAreaPiso() {
+        return largo * ancho;
+    }
+
+    public double calcularAreaParedes() {
+        return 2 * (ancho * altura + largo * altura);
+    }
+
+    @Override
+    public String toString() {
+        return "La habitación tiene las siguientes dimensiones: " +
+                "Largo: " + largo + " m" +
+                ", Ancho: " + ancho + " m" +
+                ", Altura: " + altura + " m";
+    }
+}
+
+
+public class Principal {
+
+    public static void main(String[] args) {
+        
+        Habitacion habitacion = new Habitacion(5, 4, 3);
+
+        System.out.println(habitacion);
+        double areaPiso = habitacion.calcularAreaPiso();
+        System.out.println("Se requieren " + areaPiso + " m² de enchape para el piso");
+
+        double areaParedes = habitacion.calcularAreaParedes();
+        System.out.println("Se requieren " + areaParedes + " m² de papel para tapizar las paredes");
+    }
+}
 
