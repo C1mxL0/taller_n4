@@ -1,0 +1,85 @@
+public class Informe {
+
+    private int[] ventas;
+
+    public Informe() {
+        ventas = new int[12];
+    }
+
+    public void setVentas(int[] ventas) {
+        this.ventas = ventas;
+    }
+
+    public int[] getVentas() {
+        return ventas;
+    }
+
+    public int getPromedioVentas() {
+        int totalVentas = 0;
+        for (int i = 0; i < ventas.length; i++) {
+            totalVentas += ventas[i];
+        }
+        return totalVentas / ventas.length;
+    }
+
+    public int getMesMenosVentas() {
+        int mesMenosVentas = 0;
+        int menorVentas = ventas[0];
+        for (int i = 1; i < ventas.length; i++) {
+            if (ventas[i] < menorVentas) {
+                menorVentas = ventas[i];
+                mesMenosVentas = i;
+            }
+        }
+        return mesMenosVentas;
+    }
+
+    public int getMesMayorVentas() {
+        int mesMayorVentas = 0;
+        int mayorVentas = ventas[0];
+        for (int i = 1; i < ventas.length; i++) {
+            if (ventas[i] > mayorVentas) {
+                mayorVentas = ventas[i];
+                mesMayorVentas = i;
+            }
+        }
+        return mesMayorVentas;
+    }
+
+    public int getAcumuladoVentas() {
+        int acumuladoVentas = 0;
+        for (int i = 0; i < ventas.length; i++) {
+            acumuladoVentas += ventas[i];
+        }
+        return acumuladoVentas;
+    }
+}
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+      
+        Informe informe = new Informe();
+
+  
+        informe.getVentas()[0] = 1000;
+        informe.getVentas()[1] = 2000;
+        informe.getVentas()[2] = 3000;
+        informe.getVentas()[3] = 4000;
+        informe.getVentas()[4] = 5000;
+        informe.getVentas()[5] = 6000;
+        informe.getVentas()[6] = 7000;
+        informe.getVentas()[7] = 8000;
+        informe.getVentas()[8] = 9000;
+        informe.getVentas()[9] = 10000;
+        informe.getVentas()[10] = 11000;
+        informe.getVentas()[11] = 12000;
+
+   
+        System.out.println("El promedio de ventas del año es: " + informe.getPromedioVentas());
+        System.out.println("El mes con menos ventas es: " + (informe.getMesMenosVentas() + 1));
+        System.out.println("El mes con mayores ventas es: " + (informe.getMesMayorVentas() + 1));
+        System.out.println("El acumulado de ventas del año es: " + informe.getAcumuladoVentas());
+    }
+}
